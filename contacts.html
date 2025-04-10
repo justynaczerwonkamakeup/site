@@ -146,6 +146,9 @@
                 </div>
                 <div class="form-button group-sm text-left">
                   <button class="button button-primary" type="submit">Wyślij wiadomość</button>
+                  <p id="form-success" style="display:none; color:green; font-weight:bold; margin-top:20px;">
+                  Dziękujemy! Twoja wiadomość została wysłana.
+                  </p>
                 </div>
               </form>
               -->
@@ -258,5 +261,36 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      const form = document.querySelector("form");
+      const successMessage = document.getElementById("form-success");
+    
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+    
+        const formData = new FormData(form);
+        const action = form.getAttribute("action");
+    
+        try {
+          const response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+    
+          if (response.ok) {
+            form.reset();
+            successMessage.style.display = "block";
+          } else {
+            alert("Wystąpił błąd. Spróbuj ponownie.");
+          }
+        } catch (error) {
+          alert("Coś poszło nie tak. Spróbuj później.");
+        }
+      });
+    </script>
+
   </body>
 </html>
