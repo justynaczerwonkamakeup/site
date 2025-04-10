@@ -280,17 +280,18 @@
             }
           });
     
-          if (response.ok) {
+          if (response.status === 200) {
             form.reset();
             successMessage.style.display = "block";
           } else {
-            alert("Wystąpił błąd. Spróbuj ponownie.");
+            throw new Error("Nieprawidłowy status");
           }
         } catch (error) {
-          alert("Coś poszło nie tak. Spróbuj później.");
+          alert("Wystąpił błąd. Spróbuj ponownie.");
         }
       });
     </script>
+    
 
   </body>
 </html>
