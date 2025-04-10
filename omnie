@@ -98,11 +98,34 @@
       <section class="breadcrumbs-custom">
         <div class="container">
           <ul class="breadcrumbs-custom-path">
-            <li><a href="index.html">Home</a></li>
-            <li class="active">About</li>
+            <li><a href="index.html">Start</a></li>
+            <li class="active">O mnie</li>
           </ul>
         </div>
       </section>
+      <!-- O mnie -->
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <div class="row row-50 align-items-lg-center justify-content-xl-between">
+            <div class="col-lg-6">
+              <h2>Moje Usługi Makijażowe</h2>
+              <p class="big text-gray-800">Profesjonalne usługi makijażowe, które spełniają najwyższe standardy.</p>
+              <p>Justyna, która ukończyła szkolenie w Warszawie u Agnieszki Jędrzej, gwarantuje najwyższą jakość usług, dbając o każdy detal i dostosowując makijaż do indywidualnych potrzeb klientek.</p>
+              <p>Moim priorytetem jest zadowolenie klientek – każda usługa wykonywana jest z pełnym zaangażowaniem i pasją.</p>
+              <blockquote class="blockquote">
+                <p class="q">Gwarantuję, że każda klientka poczuje się wyjątkowo, korzystając z moich usług.</p>
+              </blockquote>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-images box-images-variant-3">
+                <div class="box-images-item"><img src="images/about-1.jpg" alt="Justyna i klientka" width="470" height="282"/></div>
+                <div class="box-images-item box-images-without-border"><img src="images/about-2.jpg" alt="Studio makijażu" width="470" height="282"/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section section-lg bg-default">
         <div class="container">
           <div class="row row-50 align-items-lg-center justify-content-xl-between">
