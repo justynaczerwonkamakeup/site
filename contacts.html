@@ -152,7 +152,12 @@
                 </div>
               </form>
               -->
-              <form class="rd-mailform text-left rd-form" method="POST" action="https://formspree.io/f/moveykwj">
+              <form
+                class="rd-mailform text-left rd-form"
+                method="POST"
+                action="https://formspree.io/f/moveykwj"
+                id="kontakt-form"
+              >
                 <div class="row row-30">
                   <div class="col-sm-6">
                     <div class="form-wrap">
@@ -185,14 +190,10 @@
                     </div>
                   </div>
                 </div>
-                <input type="hidden" name="_redirect" value="https://justynaczerwonkamakeup.github.io/site/typography.html">
-                <div class="form-button group-sm text-left mt-3">
-                  <button class="button button-primary" type="submit">Wyślij wiadomość</button>
-                  <p id="form-success" style="display:none; color:green; font-weight:bold; margin-top:20px;">
-                    Dziękujemy! Twoja wiadomość została wysłana.
-                  </p>
-                </div>
-              </form>
+                  <div class="form-button group-sm text-left mt-3">
+                    <button class="button button-primary" type="submit">Wyślij wiadomość</button>
+                  </div>
+                </form>
 
             </div>
             <div class="col-lg-4">
@@ -265,7 +266,39 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      const form = document.getElementById("kontakt-form");
     
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+    
+        const formData = new FormData(form);
+        const action = form.getAttribute("action");
+    
+        try {
+          const response = await fetch(action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+    
+          if (response.status === 200) {
+            // Zresetuj formularz (opcjonalnie)
+            form.reset();
+    
+            // Przekierowanie po udanym wysłaniu
+            window.location.href = "https://justynaczerwonkamakeup.github.io/site/typography.html";
+          } else {
+            alert("Coś poszło nie tak. Spróbuj ponownie.");
+          }
+        } catch (error) {
+          alert("Błąd połączenia. Spróbuj później.");
+        }
+      });
+    </script>
+
     
 
   </body>
