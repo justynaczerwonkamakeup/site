@@ -400,6 +400,17 @@
           <label><input type="checkbox" name="services" value="voucher"> Voucher prezentowy</label><br>
           <label><input type="checkbox" name="services" value="portret"> Mini portret po makijażu</label>
         </div>
+
+        <div class="form-wrap">
+          <label for="visit-date">Preferowana data wizyty:</label>
+          <input class="form-input" id="visit-date" type="date" name="visit_date" required>
+        </div>
+        
+        <div class="form-wrap">
+          <label for="visit-time">Preferowana godzina:</label>
+          <input class="form-input" id="visit-time" type="time" name="visit_time" required>
+        </div>
+
       
         <div class="form-wrap">
           <label for="address">Chcesz otrzymywać prezenty? Podaj adres do wysyłki (opcjonalnie):</label>
@@ -461,5 +472,15 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      // Ustaw domyślną datę urodzenia na 1 stycznia 1994
+      document.addEventListener("DOMContentLoaded", function() {
+        const birthdayInput = document.getElementById("birthday");
+        if (birthdayInput && !birthdayInput.value) {
+          birthdayInput.value = "1994-01-01";
+        }
+      });
+    </script>
+
   </body>
 </html>
