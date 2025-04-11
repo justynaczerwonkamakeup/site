@@ -302,6 +302,114 @@
         </div>
       </section>
 
+      <!-- kolejny formularz -->
+      <form class="rd-form rd-mailform" style="max-width: 700px; margin: auto;">
+        <div class="form-wrap">
+          <label for="name">Imię i nazwisko:</label>
+          <input class="form-input" id="name" type="text" name="name" required>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="email">Adres e-mail:</label>
+          <input class="form-input" id="email" type="email" name="email" required>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="birthday">Data urodzin:</label>
+          <input class="form-input" id="birthday" type="date" name="birthday">
+        </div>
+      
+        <div class="form-wrap">
+          <label for="music">Jaka muzyka relaksuje Cię podczas makijażu?</label>
+          <select class="form-input" id="music" name="music">
+            <option value="chill">Chill / Lo-fi</option>
+            <option value="rnb">R&B</option>
+            <option value="klasyczna">Klasyczna</option>
+            <option value="cisza">Wolę ciszę</option>
+            <option value="inna">Inna – wpisz poniżej</option>
+          </select>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="custom-music">Konkretne piosenki (jeśli masz ulubione):</label>
+          <input class="form-input" id="custom-music" type="text" name="custom_music" placeholder="Wpisz tytuł/artystę">
+        </div>
+      
+        <div class="form-wrap">
+          <label>Rozmowa w trakcie wizyty:</label><br>
+          <label><input type="radio" name="talking" value="tak"> Chętnie porozmawiam</label><br>
+          <label><input type="radio" name="talking" value="nie"> Wolę relaks i ciszę</label><br>
+          <label><input type="radio" name="talking" value="zalezy"> Zależy od dnia</label>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="drink">Ulubiony napój podczas makijażu:</label>
+          <select class="form-input" id="drink" name="drink">
+            <option value="herbata">Herbata</option>
+            <option value="kawa">Kawa</option>
+            <option value="woda">Woda z cytryną / miętą</option>
+            <option value="prosecco">Prosecco</option>
+            <option value="inna">Inny – wpisz poniżej</option>
+          </select>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="prosecco-type">Jeśli prosecco – wybierz rodzaj:</label><br>
+          <label><input type="radio" name="prosecco_type" value="alkoholowe"> Alkoholowe</label><br>
+          <label><input type="radio" name="prosecco_type" value="bezalkoholowe"> Bezalkoholowe</label>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="custom-drink">Inny napój:</label>
+          <input class="form-input" id="custom-drink" type="text" name="custom_drink">
+        </div>
+      
+        <div class="form-wrap">
+          <label for="sweet">Lubisz coś słodkiego podczas wizyty?</label>
+          <select class="form-input" id="sweet" name="sweet">
+            <option value="czekolada">Czekoladki</option>
+            <option value="migdały">Migdały</option>
+            <option value="inna">Tak, ale coś innego – wpisz poniżej</option>
+            <option value="nie">Nie, dziękuję</option>
+          </select>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="custom-sweet">Jeśli masz konkretną ochotę – napisz co byś chciała:</label>
+          <input class="form-input" id="custom-sweet" type="text" name="custom_sweet" placeholder="Napisz np. Tiramisu, babeczka itp.">
+        </div>
+      
+        <div class="form-wrap">
+          <label for="restaurant-order">Chcesz, żebym coś zamówiła z restauracji? Wpisz co:</label>
+          <textarea class="form-input" id="restaurant-order" name="restaurant_order" rows="2" placeholder="Napisz np. sushi, box owocowy, sałatka itp."></textarea>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="skin">Czy Twoja skóra ma szczególne potrzeby?</label>
+          <textarea class="form-input" id="skin" name="skin" rows="3"></textarea>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="services">Z jakich usług chcesz skorzystać? (można wybrać kilka)</label><br>
+          <label><input type="checkbox" name="services" value="makijaz_dzienny"> Makijaż dzienny</label><br>
+          <label><input type="checkbox" name="services" value="makijaz_slubny"> Makijaż ślubny</label><br>
+          <label><input type="checkbox" name="services" value="makijaz_fotograficzny"> Makijaż fotograficzny</label><br>
+          <label><input type="checkbox" name="services" value="masaz_twarzy"> Masaż twarzy</label><br>
+          <label><input type="checkbox" name="services" value="kepki"> Aplikacja kępek</label><br>
+          <label><input type="checkbox" name="services" value="relaks"> Rytuał relaksacyjny</label><br>
+          <label><input type="checkbox" name="services" value="voucher"> Voucher prezentowy</label><br>
+          <label><input type="checkbox" name="services" value="portret"> Mini portret po makijażu</label>
+        </div>
+      
+        <div class="form-wrap">
+          <label for="address">Chcesz otrzymywać prezenty? Podaj adres do wysyłki (opcjonalnie):</label>
+          <textarea class="form-input" id="address" name="address" rows="3"></textarea>
+        </div>
+      
+        <div class="form-button group-sm text-center">
+          <button class="button button-primary" type="submit">Wyślij formularz</button>
+        </div>
+      </form>
 
 
 
