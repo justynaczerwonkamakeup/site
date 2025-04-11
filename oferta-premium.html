@@ -468,7 +468,19 @@
           <label for="makeup-details">Na czym Ci szczególnie zależy w makijażu?</label>
           <textarea class="form-input" id="makeup-details" name="makeup_details" rows="3"></textarea>
         </div>
-      
+
+        <div class="form-wrap">
+          <label>Czy makijaż ma być z dojazdem do Ciebie?</label><br>
+          <label><input type="radio" name="dojazd" value="tak" onclick="document.getElementById('dojazd-adres').style.display='block'"> Tak, proszę o dojazd</label><br>
+          <label><input type="radio" name="dojazd" value="nie" onclick="document.getElementById('dojazd-adres').style.display='none'"> Nie, przyjadę na miejsce</label>
+        </div>
+        
+        <div class="form-wrap" id="dojazd-adres" style="display: none;">
+          <label for="dojazd_address">Adres, pod który mam dojechać:</label>
+          <textarea class="form-input" id="dojazd_address" name="dojazd_address" rows="2" placeholder="Ulica, numer, miasto"></textarea>
+        </div>
+        
+              
         <div class="form-button group-sm text-center">
           <button class="button button-primary" type="submit">Wyślij formularz</button>
         </div>
