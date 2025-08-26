@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="pl">
   <head>
     <title>Justyna Czerwonka - Makeup</title>
     <meta name="format-detection" content="telephone=no">
@@ -9,30 +9,43 @@
 
     <!-- Hints -->
     <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+    <link rel="preconnect" href="https://scontent.cdninstagram.com" crossorigin>
     <link rel="dns-prefetch" href="//www.instagram.com">
-    <!-- LCP image (pierwszy slajd karuzeli) -->
-    <link rel="preload" as="image" href="images/beautymakeup.jpg" imagesrcset="images/beautymakeup.jpg 1x" fetchpriority="high">
+    <link rel="dns-prefetch" href="//scontent.cdninstagram.com">
+
+    <!-- LCP image (pierwszy slajd karuzeli): preload ze srcset/sizes -->
+    <link rel="preload" as="image"
+      href="images/beautymakeup-768.avif"
+      imagesrcset="
+        images/beautymakeup-480.avif 480w,
+        images/beautymakeup-768.avif 768w,
+        images/beautymakeup-1200.avif 1200w"
+      imagesizes="(min-width:1200px) 600px, 90vw"
+      fetchpriority="high" type="image/avif">
 
     <!-- Stylesheets (fontowe bez zmian) -->
     <!-- Font Awesome: async (nie blokuje FCP) -->
-    <link rel="preload" href="css/all.min.css" as="style">
-    <link rel="stylesheet" href="css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="css/all.min.css?v=3f9a8c" as="style">
+    <link rel="stylesheet" href="css/all.min.css?v=3f9a8c" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="css/fonts-local.css">
+    <link rel="stylesheet" href="css/fonts-local.css?v=3f9a8c">
     <!-- Bootstrap + główne style: asynchronicznie z preloadem -->
-    <link rel="preload" href="css/bootstrap.css" as="style">
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="css/bootstrap.css?v=3f9a8c" as="style">
+    <link rel="preload" href="css/style.css?v=3f9a8c" as="style">
+    <link rel="stylesheet" href="css/bootstrap.css?v=3f9a8c" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/fonts.css?v=3f9a8c">
+    <link rel="stylesheet" href="css/style.css?v=3f9a8c" media="print" onload="this.media='all'">
     <noscript>
-      <link rel="stylesheet" href="css/all.min.css">
-      <link rel="stylesheet" href="css/bootstrap.css">
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/all.min.css?v=3f9a8c">
+      <link rel="stylesheet" href="css/bootstrap.css?v=3f9a8c">
+      <link rel="stylesheet" href="css/style.css?v=3f9a8c">
     </noscript>
 
+    <!-- Preload lokalnych fontów używanych above-the-fold (dopasuj ścieżki) -->
+    <link rel="preload" href="/fonts/YourFont-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/YourFont-bold.woff2" as="font" type="font/woff2" crossorigin>
+
     <style>
-      /* renderuj sekcje dopiero gdy wejdą w viewport */
       /* renderuj sekcje dopiero gdy wejdą w viewport – ale nie header/footer */
       .section:not(.page-header):not(.section-xs-type-1):not(.footer-minimal){
         content-visibility:auto;
@@ -52,11 +65,8 @@
         height: auto !important;
         margin: auto;
       }
-
       @media (min-width: 768px) {
-        .insta-widget .instagram-media {
-          max-width: 540px !important;
-        }
+        .insta-widget .instagram-media { max-width: 540px !important; }
       }
 
       /* Stabilizacja miniaturek w karuzeli (mniej CLS) */
@@ -71,8 +81,8 @@
       }
       .google-map-container button{ padding:.75rem 1.25rem; }
     </style>
-
   </head>
+
   <body>
       <!-- Page Header-->
       <header class="section page-header">
@@ -100,11 +110,11 @@
                 </div>
                 <div class="social-block">
                   <ul class="list-inline">
-                    <li><a class="fa-brands fa-facebook-messenger" href="https://m.me/644065852120283" target="_blank"></a></li>
-                    <li><a class="icon fa-facebook" href="https://www.facebook.com/share/1HojNzDMHT/?mibextid=wwXlfr" target="_blank"></a></li>
-                    <li><a class="icon fa-instagram" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank"></a></li>
-                    <li><a class="icon fa-envelope" href="mailto:justynaczerwonkamakeup@gmail.com"></a></li>
-                    <li><a class="fa-brands fa-tiktok" href="https://www.tiktok.com/@justynaczerwonkamakeup" target="_blank"></a></li>
+                    <li><a class="fa-brands fa-facebook-messenger" href="https://m.me/644065852120283" target="_blank" aria-label="Messenger"></a></li>
+                    <li><a class="icon fa-facebook" href="https://www.facebook.com/share/1HojNzDMHT/?mibextid=wwXlfr" target="_blank" aria-label="Facebook"></a></li>
+                    <li><a class="icon fa-instagram" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" aria-label="Instagram"></a></li>
+                    <li><a class="icon fa-envelope" href="mailto:justynaczerwonkamakeup@gmail.com" aria-label="Email"></a></li>
+                    <li><a class="fa-brands fa-tiktok" href="https://www.tiktok.com/@justynaczerwonkamakeup" target="_blank" aria-label="TikTok"></a></li>
                   </ul>
                 </div>
               </div>
@@ -114,11 +124,11 @@
                 <!-- RD Navbar Panel-->
                 <div class="rd-navbar-panel">
                   <!-- RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" aria-label="Otwórz menu"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand">
                     <a class="brand" href="index.html">
-                      <img src="images/IMG_2709.jpeg" alt="" width="257" height="84" decoding="async"/>
+                      <img src="images/IMG_2709.jpeg" alt="Logo" width="257" height="84" decoding="async" loading="lazy"/>
                     </a>
                   </div>
                 </div>
@@ -126,14 +136,10 @@
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Start</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a>
-                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Start</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a></li>
                     </ul>
                   </div>
                 </div>
@@ -143,7 +149,7 @@
         </div>
       </header>
 
-      <!-- Swiper-->
+      <!-- Swiper / Galeria -->
       <section class="section section-md bg-default text-center" id="gallery">
         <div class="container">
           <p class="block-lg"> </p>
@@ -155,51 +161,124 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
             <div class="col-12">
               <!-- Owl Carousel-->
               <div class="owl-carousel owl-carousel-center" data-items="1" data-md-items="3" data-xl-items="5" data-dots="false" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false" data-center="true" data-autoplay="true">
+
+                <!-- LCP: bez lazy, wysoki priorytet -->
                 <div class="team-minimal">
                   <figure>
-                    <!-- LCP: bez lazy, z fetchpriority -->
-                    <img src="images/beautymakeup.jpg" alt="" width="320" height="370" fetchpriority="high" decoding="async">
+                    <picture>
+                      <source type="image/avif" srcset="
+                        images/beautymakeup-480.avif 480w,
+                        images/beautymakeup-768.avif 768w,
+                        images/beautymakeup-1200.avif 1200w" sizes="(min-width:1200px) 600px, 90vw">
+                      <source type="image/webp" srcset="
+                        images/beautymakeup-480.webp 480w,
+                        images/beautymakeup-768.webp 768w,
+                        images/beautymakeup-1200.webp 1200w" sizes="(min-width:1200px) 600px, 90vw">
+                      <img
+                        src="images/beautymakeup.jpg"
+                        srcset="images/beautymakeup-480.jpg 480w, images/beautymakeup-768.jpg 768w, images/beautymakeup-1200.jpg 1200w"
+                        sizes="(min-width:1200px) 600px, 90vw"
+                        alt="BEAUTY MAKEUP"
+                        width="320" height="370"
+                        fetchpriority="high" decoding="async">
+                    </picture>
                   </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">BEAUTY MAKEUP</a></h4>
                     <p>BEAUTY MAKEUP</p>
                   </div>
                 </div>
+
                 <div class="team-minimal">
-                  <figure><img src="images/beautymakeup2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async" fetchpriority="low"></figure>
+                  <figure>
+                    <picture>
+                      <source type="image/avif" srcset="images/beautymakeup2-320.avif 320w, images/beautymakeup2-480.avif 480w, images/beautymakeup2-640.avif 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <source type="image/webp" srcset="images/beautymakeup2-320.webp 320w, images/beautymakeup2-480.webp 480w, images/beautymakeup2-640.webp 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <img src="images/beautymakeup2.jpg"
+                           srcset="images/beautymakeup2-320.jpg 320w, images/beautymakeup2-480.jpg 480w, images/beautymakeup2-640.jpg 640w"
+                           sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw"
+                           alt="BEAUTY MAKEUP"
+                           width="320" height="370" loading="lazy" decoding="async" fetchpriority="low">
+                    </picture>
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">BEAUTY MAKEUP</a></h4>
                     <p>BEAUTY MAKEUP</p>
                   </div>
                 </div>
+
                 <div class="team-minimal">
-                  <figure><img src="images/softglam.jpg" alt="" width="320" height="370" loading="lazy" decoding="async" fetchpriority="low"></figure>
+                  <figure>
+                    <picture>
+                      <source type="image/avif" srcset="images/softglam-320.avif 320w, images/softglam-480.avif 480w, images/softglam-640.avif 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <source type="image/webp" srcset="images/softglam-320.webp 320w, images/softglam-480.webp 480w, images/softglam-640.webp 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <img src="images/softglam.jpg"
+                           srcset="images/softglam-320.jpg 320w, images/softglam-480.jpg 480w, images/softglam-640.jpg 640w"
+                           sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw"
+                           alt="SOFT GLAM MAKEUP"
+                           width="320" height="370" loading="lazy" decoding="async" fetchpriority="low">
+                    </picture>
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">SOFT GLAM MAKEUP</a></h4>
                     <p>SOFT GLAM MAKEUP</p>
                   </div>
                 </div>
+
                 <div class="team-minimal">
-                  <figure><img src="images/softglam2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async" fetchpriority="low"></figure>
+                  <figure>
+                    <picture>
+                      <source type="image/avif" srcset="images/softglam2-320.avif 320w, images/softglam2-480.avif 480w, images/softglam2-640.avif 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <source type="image/webp" srcset="images/softglam2-320.webp 320w, images/softglam2-480.webp 480w, images/softglam2-640.webp 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <img src="images/softglam2.jpg"
+                           srcset="images/softglam2-320.jpg 320w, images/softglam2-480.jpg 480w, images/softglam2-640.jpg 640w"
+                           sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw"
+                           alt="SOFT GLAM MAKEUP"
+                           width="320" height="370" loading="lazy" decoding="async" fetchpriority="low">
+                    </picture>
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">SOFT GLAM MAKEUP</a></h4>
                     <p>SOFT GLAM MAKEUP</p>
                   </div>
                 </div>
+
                 <div class="team-minimal">
-                  <figure><img src="images/glowglam2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async" fetchpriority="low"></figure>
+                  <figure>
+                    <picture>
+                      <source type="image/avif" srcset="images/glowglam2-320.avif 320w, images/glowglam2-480.avif 480w, images/glowglam2-640.avif 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <source type="image/webp" srcset="images/glowglam2-320.webp 320w, images/glowglam2-480.webp 480w, images/glowglam2-640.webp 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <img src="images/glowglam2.jpg"
+                           srcset="images/glowglam2-320.jpg 320w, images/glowglam2-480.jpg 480w, images/glowglam2-640.jpg 640w"
+                           sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw"
+                           alt="GLOW GLAM MAKEUP"
+                           width="320" height="370" loading="lazy" decoding="async" fetchpriority="low">
+                    </picture>
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">GLOW GLAM MAKEUP</a></h4>
                     <p>GLOW GLAM MAKEUP</p>
                   </div>
                 </div>
+
                 <div class="team-minimal">
-                  <figure><img src="images/glowglam.jpg" alt="" width="320" height="370" loading="lazy" decoding="async" fetchpriority="low"></figure>
+                  <figure>
+                    <picture>
+                      <source type="image/avif" srcset="images/glowglam-320.avif 320w, images/glowglam-480.avif 480w, images/glowglam-640.avif 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <source type="image/webp" srcset="images/glowglam-320.webp 320w, images/glowglam-480.webp 480w, images/glowglam-640.webp 640w" sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw">
+                      <img src="images/glowglam.jpg"
+                           srcset="images/glowglam-320.jpg 320w, images/glowglam-480.jpg 480w, images/glowglam-640.jpg 640w"
+                           sizes="(min-width:1200px) 20vw, (min-width:768px) 30vw, 90vw"
+                           alt="GLOW GLAM MAKEUP"
+                           width="320" height="370" loading="lazy" decoding="async" fetchpriority="low">
+                    </picture>
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">GLOW GLAM MAKEUP</a></h4>
                     <p>GLOW GLAM MAKEUP</p>
                   </div>
                 </div>
+
               </div>
             </div>
             <div class="col-12"><a class="button button-primary" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" rel="noopener">Zobacz portfolio</a></div>
@@ -211,13 +290,20 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
       <section class="section section-lg bg-gray-100">
         <div class="container">
           <div class="row row-xl-50 align-items-center">
-            
             <div class="col-lg-6">
               <figure class="block-image">
-                <img src="images/kosmetyki.jpg" alt="Makijaż" width="541" height="369" loading="lazy" decoding="async"/>
+                <picture>
+                  <source type="image/avif" srcset="images/kosmetyki-480.avif 480w, images/kosmetyki-768.avif 768w, images/kosmetyki-1080.avif 1080w" sizes="(min-width:1200px) 541px, 90vw">
+                  <source type="image/webp" srcset="images/kosmetyki-480.webp 480w, images/kosmetyki-768.webp 768w, images/kosmetyki-1080.webp 1080w" sizes="(min-width:1200px) 541px, 90vw">
+                  <img src="images/kosmetyki.jpg"
+                       srcset="images/kosmetyki-480.jpg 480w, images/kosmetyki-768.jpg 768w, images/kosmetyki-1080.jpg 1080w"
+                       sizes="(min-width:1200px) 541px, 90vw"
+                       alt="Makijaż - kosmetyki"
+                       width="541" height="369" loading="lazy" decoding="async"/>
+                </picture>
               </figure>
             </div>
-            
+
             <div class="col-lg-6">
               <h2 class="heading-decorate"><span class="divider"></span>Profesjonalne Kosmetyki</h2>
               <p class="big text-gray-800">
@@ -288,8 +374,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
         </div>
       </section>
 
-      <!-- Osadzona statyczna mapa Google -->
-      <!-- Mapa: tap-to-load (wstrzyknięcie <iframe> dopiero po kliknięciu) -->
+      <!-- Osadzona statyczna mapa Google (tap-to-load) -->
       <div class="google-map-container" style="text-align: center; padding: 20px;">
         <div id="mapTapToLoad" class="map-placeholder" role="button" aria-label="Załaduj mapę Google">
           <div>
@@ -325,9 +410,9 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
       <!-- Global Mailform Output-->
       <div class="snackbars" id="form-output-global"></div>
 
-      <!-- Skrypty: defer + lazy IG + tap-to-load map -->
-      <script defer src="js/core.min.js"></script>
-      <script defer src="js/script.js"></script>
+      <!-- Skrypty: defer + wersjonowanie -->
+      <script defer src="js/core.min.js?v=3f9a8c"></script>
+      <script defer src="js/script.js?v=3f9a8c"></script>
 
       <script>
         // Lazy load Instagram dopiero, gdy sekcja wejdzie w viewport
