@@ -33,7 +33,17 @@
 
     <style>
       /* renderuj sekcje dopiero gdy wejdą w viewport */
-      .section{content-visibility:auto;contain-intrinsic-size: 1px 800px;}
+      /* renderuj sekcje dopiero gdy wejdą w viewport – ale nie header/footer */
+      .section:not(.page-header):not(.section-xs-type-1):not(.footer-minimal){
+        content-visibility:auto;
+        contain-intrinsic-size:1px 800px;
+      }
+
+      /* pewność, że header jest zawsze renderowany */
+      .page-header{
+        content-visibility:visible;
+        contain-intrinsic-size:auto;
+      }
 
       .insta-widget .instagram-media {
         max-width: 100% !important;
