@@ -1,0 +1,22 @@
+# katalog node_modules z NPM (zawsze ignorujemy)
+node_modules/
+
+# pliki lock, jeśli nie chcesz ich commitować (często commitujemy, ale zależy od workflow)
+#package-lock.json
+#pnpm-lock.yaml
+#yarn.lock
+
+# artefakty systemowe
+.DS_Store
+Thumbs.db
+
+# logi
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# cache edytorów/IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,4 +1,3 @@
-
 <!-- Page Title--><!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
@@ -7,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
-    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Stylesheets (fontowe zostają bez zmian) -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fonts-local.css">
+    <!-- Przyspieszenie: bootstrap + style asynchronicznie -->
+    <link rel="preload" href="css/bootstrap.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style.css">
+    </noscript>
+
     <style>
       .insta-widget .instagram-media {
         max-width: 100% !important;
@@ -21,12 +29,16 @@
         height: auto !important;
         margin: auto;
       }
-    
+
       @media (min-width: 768px) {
         .insta-widget .instagram-media {
           max-width: 540px !important;
         }
       }
+
+      /* Stabilizacja miniaturek w karuzeli (mniej CLS) */
+      .team-minimal figure { aspect-ratio: 320 / 370; overflow: hidden; }
+      .team-minimal img { width: 100%; height: 100%; object-fit: cover; display: block; }
     </style>
 
   </head>
@@ -57,11 +69,10 @@
                 </div>
                 <div class="social-block">
                   <ul class="list-inline">
-                    <li><a class="icon fab fa-facebook-messenger" href="https://m.me/644065852120283" target="_blank"></a></li>
+                    <li><a class="fa-brands fa-facebook-messenger" href="https://m.me/644065852120283" target="_blank"></a></li>
                     <li><a class="icon fa-facebook" href="https://www.facebook.com/share/1HojNzDMHT/?mibextid=wwXlfr" target="_blank"></a></li>
                     <li><a class="icon fa-instagram" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank"></a></li>
                     <li><a class="icon fa-envelope" href="mailto:justynaczerwonkamakeup@gmail.com"></a></li>
-                    
                     <li><a class="icon fa-tiktok" href="https://www.tiktok.com/@justynaczerwonkamakeup" target="_blank"></a></li>
                   </ul>
                 </div>
@@ -74,7 +85,11 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/IMG_2709.jpeg" alt="" width="257" height="84"/></a></div>
+                  <div class="rd-navbar-brand">
+                    <a class="brand" href="index.html">
+                      <img src="images/IMG_2709.jpeg" alt="" width="257" height="84" decoding="async"/>
+                    </a>
+                  </div>
                 </div>
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
@@ -97,7 +112,7 @@
         </div>
       </header>
       <!-- Swiper-->
-      <section class="section section-md bg-default text-center">
+      <section class="section section-md bg-default text-center" id="gallery">
         <div class="container">
           <p class="block-lg">Każdy makijaż opowiada inną historię.
 Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wyglądu, ale też do charakteru i nastroju. Najważniejsze jest to, jak się w nim czujesz. Poniżej możesz zobaczyć efekty mojej pracy.</p>
@@ -108,42 +123,45 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
               <!-- Owl Carousel-->
               <div class="owl-carousel owl-carousel-center" data-items="1" data-md-items="3" data-xl-items="5" data-dots="false" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="0" data-mouse-drag="false" data-center="true" data-autoplay="true">
                 <div class="team-minimal">
-                  <figure><img src="images/beautymakeup.jpg" alt="" width="320" height="370"></figure>
+                  <figure>
+                    <!-- LCP: bez lazy, z fetchpriority -->
+                    <img src="images/beautymakeup.jpg" alt="" width="320" height="370" fetchpriority="high" decoding="async">
+                  </figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">BEAUTY MAKEUP</a></h4>
                     <p>BEAUTY MAKEUP</p>
                   </div>
                 </div>
                 <div class="team-minimal">
-                  <figure><img src="images/beautymakeup2.jpg" alt="" width="320" height="370"></figure>
+                  <figure><img src="images/beautymakeup2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async"></figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">BEAUTY MAKEUP</a></h4>
                     <p>BEAUTY MAKEUP</p>
                   </div>
                 </div>
                 <div class="team-minimal">
-                  <figure><img src="images/softglam.jpg" alt="" width="320" height="370"></figure>
+                  <figure><img src="images/softglam.jpg" alt="" width="320" height="370" loading="lazy" decoding="async"></figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">SOFT GLAM MAKEUP</a></h4>
                     <p>SOFT GLAM MAKEUP</p>
                   </div>
                 </div>
                 <div class="team-minimal">
-                  <figure><img src="images/softglam2.jpg" alt="" width="320" height="370"></figure>
+                  <figure><img src="images/softglam2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async"></figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">SOFT GLAM MAKEUP</a></h4>
                     <p>SOFT GLAM MAKEUP</p>
                   </div>
                 </div>
                 <div class="team-minimal">
-                  <figure><img src="images/glowglam2.jpg" alt="" width="320" height="370"></figure>
+                  <figure><img src="images/glowglam2.jpg" alt="" width="320" height="370" loading="lazy" decoding="async"></figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">GLOW GLAM MAKEUP</a></h4>
                     <p>GLOW GLAM MAKEUP</p>
                   </div>
                 </div>
                 <div class="team-minimal">
-                  <figure><img src="images/glowglam.jpg" alt="" width="320" height="370"></figure>
+                  <figure><img src="images/glowglam.jpg" alt="" width="320" height="370" loading="lazy" decoding="async"></figure>
                   <div class="team-minimal-caption">
                     <h4 class="team-title"><a href="#">GLOW GLAM MAKEUP</a></h4>
                     <p>GLOW GLAM MAKEUP</p>
@@ -151,7 +169,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
                 </div>
               </div>
             </div>
-            <div class="col-12"><a class="button button-primary" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank">Zobacz portfolio</a></div>
+            <div class="col-12"><a class="button button-primary" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" rel="noopener">Zobacz portfolio</a></div>
           </div>
         </div>
       </section>
@@ -162,7 +180,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
       
       <div class="col-lg-6">
         <figure class="block-image">
-          <img src="images/kosmetyki.jpg" alt="Makijaż" width="541" height="369"/>
+          <img src="images/kosmetyki.jpg" alt="Makijaż" width="541" height="369" loading="lazy" decoding="async"/>
         </figure>
       </div>
       
@@ -186,7 +204,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
 <section class="section"></section>
 
 
-  <!-- Instagram Widget -->
+  <!-- Instagram Widget (bez zmian) -->
   <section class="section section-lg bg-default text-center insta-widget">
     <div class="container">
       <h2 class="heading-decorate">Instagram</h2>
@@ -279,7 +297,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
   <script defer src="js/script.js"></script>
 
   <script>
-    // Lazy load Instagram dopiero, gdy sekcja wejdzie w viewport
+    // Lazy load Instagram dopiero, gdy sekcja wejdzie w viewport (bez zmian)
     (function(){
       let igLoaded = false;
       function loadIG() {
@@ -292,7 +310,7 @@ Tworzę go z myślą o konkretnej osobie - tak, by pasował nie tylko do wygląd
       if ('IntersectionObserver' in window && target) {
         new IntersectionObserver((entries, obs) => {
           if (entries[0].isIntersecting) { loadIG(); obs.disconnect(); }
-        }).observe(target);
+        }, { rootMargin: '200px' }).observe(target);
       } else { loadIG(); }
     })();
 
