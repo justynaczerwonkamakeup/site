@@ -1,27 +1,34 @@
-
-<!-- Page Title--><!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="pl">
   <head>
     <title>Kontakt</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Skontaktuj się — Justyna Czerwonka Makeup. Messenger, Instagram lub formularz kontaktowy.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/fonts-local.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+
+    <style>
+      /* ukryj preloader, jeśli go nie używasz */
+      .preloader { display: none !important; }
+
+      /* na wszelki wypadek pokaż stronę,
+         gdyby szablon startował z opacity:0 */
+      .page { opacity: 1 !important; visibility: visible !important; }
+
+      .ie-panel{display:none;background:#212121;padding:10px 0;box-shadow:3px 3px 5px 0 rgba(0,0,0,.3);clear:both;text-align:center;position:relative;z-index:1;}
+      html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display:block;}
+    </style>
   </head>
+
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-body"> 
-        <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
-      </div></div>
     <div class="page">
       <!-- Page Header-->
       <header class="section page-header">
@@ -110,48 +117,6 @@
               <div class="divider-lg"></div>
               <p>Możesz się ze mną skontaktować w dowolny, wygodny dla Ciebie sposób. Jestem dostępna 24/7. <br class="d-none d-lg-inline">Możesz również skorzystać z poniższego formularza szybkiego kontaktu.</p>
               <!-- RD Mailform-->
-              <!--
-              <form class="rd-mailform text-left rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                <div class="row row-30">
-                  <div class="col-sm-6">
-                    <div class="form-wrap">
-                      <label class="form-label" for="contact-name">Imię</label>
-                      <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-wrap">
-                      <label class="form-label" for="contact-sec-name">Nazwisko</label>
-                      <input class="form-input" id="contact-sec-name" type="text" name="sec-name" data-constraints="@Required">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-wrap">
-                      <label class="form-label" for="contact-phone">Telefon</label>
-                      <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Numeric @Required">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-wrap">
-                      <label class="form-label" for="contact-email">Mail</label>
-                      <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-wrap">
-                      <label class="form-label" for="contact-message">Wiadomość</label>
-                      <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-button group-sm text-left">
-                  <button class="button button-primary" type="submit">Wyślij wiadomość</button>
-                  <p id="form-success" style="display:none; color:green; font-weight:bold; margin-top:20px;">
-                  Dziękujemy! Twoja wiadomość została wysłana.
-                  </p>
-                </div>
-              </form>
-              -->
               <form
                 class="rd-mailform text-left rd-form"
                 method="POST"
@@ -206,6 +171,10 @@
                   <p class="contact-list-title">Media społecznościowe</p>
                   <div class="contact-list-content">
                     <div style="margin-bottom:6px;">
+                      <a class="fa-brands fa-facebook" href="https://www.facebook.com/share/1HojNzDMHT/?mibextid=wwXlfr" target="_blank" rel="noopener noreferrer"></a>
+                      <a href="https://www.facebook.com/share/1HojNzDMHT/?mibextid=wwXlfr" target="_blank" rel="noopener noreferrer">Justyna Czerwonka Makeup</a>
+                    </div>
+                    <div style="margin-bottom:6px;">
                       <a class="fa-brands fa-instagram" href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" rel="noopener noreferrer"></a>
                       <a href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" rel="noopener noreferrer">justynaczerwonkamakeup</a>
                     </div>
@@ -213,7 +182,6 @@
                       <a class="fa-brands fa-tiktok" href="https://www.tiktok.com/@justynaczerwonkamakeup" target="_blank" rel="noopener noreferrer"></a>
                       <a href="https://www.tiktok.com/@justynaczerwonkamakeup" target="_blank" rel="noopener noreferrer">justynaczerwonkamakeup</a>
                     </div>
-
                   </div>
                 </li>
 
