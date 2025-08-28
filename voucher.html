@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voucher – Justyna Czerwonka Makeup</title>
+  <meta name="description" content="Kup voucher na makijaż: beauty, soft glam, glow glam (150 zł) lub ślubny (400 zł). Płatność przelewem na konto.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Reuse site styles -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fonts-local.css">
+  <link rel="preload" href="css/bootstrap.css" as="style">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+  </noscript>
+
+  <style>
+    /* Minimal, spójny wygląd karty vouchera */
+    .voucher-hero { text-align:center; padding: 3rem 1rem 1rem; }
+    .voucher-hero h1 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: .5rem; }
+    .voucher-hero p.lead { color:#555; max-width: 720px; margin: 0 auto 1rem; }
+
+    .voucher-card { max-width: 900px; margin: 1rem auto 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.08); background: #fff; overflow: hidden; }
+    .voucher-card .row { align-items: stretch; }
+    .voucher-media { min-height: 280px; background: center/cover no-repeat url('images/softglam.jpg'); }
+    .voucher-body { padding: 1.25rem; }
+
+    .form-note { font-size:.9rem; color:#6c757d; }
+    .price { font-weight:700; font-size:1.25rem; }
+    .bank-box { background:#f8f9fa; border-radius:12px; padding:1rem; margin-top:1rem; border:1px solid #eee; }
+    .bank-box code { user-select: all; }
+    .copy-btn { margin-top:.5rem; }
+
+    .order-summary { border-top:1px dashed #e3e3e3; margin-top:1rem; padding-top:1rem; }
+    .order-id { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+    .voucher-terms { max-width: 900px; margin: 0 auto 3rem; color:#555; font-size: .95rem; }
+    .voucher-terms li { margin-bottom: .4rem; }
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Voucher – Justyna Czerwonka Makeup">
+  <meta property="og:description" content="Kup voucher na makijaż: beauty, soft glam, glow glam (150 zł) lub ślubny (400 zł).">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.jpg">
+</head>
+<body>
+  <!-- Page Header (skrót – zakładam ten sam header co na stronie głównej) -->
+  <header class="section page-header">
+    <div class="rd-navbar-wrap">
+      <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-stick-up="true">
+        <div class="rd-navbar-main-outer">
+          <div class="rd-navbar-main">
+            <div class="rd-navbar-panel">
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" aria-label="Otwórz menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+              <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/IMG_2709.jpeg" alt="Justyna Czerwonka Makeup" width="160" height="52" decoding="async"></a></div>
+            </div>
+            <div class="rd-navbar-main-element">
+              <div id="primary-nav" class="rd-navbar-nav-wrap">
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Start</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a></li>
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="voucher.html" aria-current="page">Voucher</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section bg-default voucher-hero text-center">
+      <div class="container">
+        <h1>Voucher na makijaż</h1>
+        <p class="lead">Podaruj bliskiej osobie makijaż wykonany profesjonalnymi kosmetykami. Wybierz rodzaj makijażu, wypełnij dane i złóż zamówienie. Płatność wygodnym przelewem na konto.</p>
+      </div>
+    </section>
+
+    <section class="section bg-default">
+      <div class="container">
+        <div class="voucher-card">
+          <div class="row no-gutters">
+            <div class="col-lg-6 voucher-media" role="img" aria-label="Makijaż – zdjęcie poglądowe"></div>
+            <div class="col-lg-6">
+              <div class="voucher-body">
+                <form id="voucherForm" novalidate>
+                  <div class="form-group">
+                    <label for="voucherType">Rodzaj makijażu</label>
+                    <select class="form-control" id="voucherType" name="voucherType" required>
+                      <option value="beauty" data-price="150">Beauty – 150 zł</option>
+                      <option value="softglam" data-price="150">Soft Glam – 150 zł</option>
+                      <option value="glowglam" data-price="150">Glow Glam – 150 zł</option>
+                      <option value="slubny" data-price="400">Ślubny – 400 zł</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipientName">Imię i nazwisko obdarowanej/ego</label>
+                    <input type="text" class="form-control" id="recipientName" name="recipientName" placeholder="np. Anna Kowalska" required>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-7">
+                      <label for="buyerEmail">E‑mail do potwierdzenia</label>
+                      <input type="email" class="form-control" id="buyerEmail" name="buyerEmail" placeholder="twój@email.pl" required>
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label for="buyerPhone">Telefon (opcjonalnie)</label>
+                      <input type="tel" class="form-control" id="buyerPhone" name="buyerPhone" placeholder="np. 600 000 000" pattern="[0-9 +()-]{6,}">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Wiadomość / dedykacja (opcjonalnie)</label>
+                    <textarea class="form-control" id="message" name="message" rows="2" maxlength="250" placeholder="Krótka dedykacja na voucherze"></textarea>
+                    <small class="form-note">Maks. 250 znaków.</small>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <div>Do zapłaty</div>
+                      <div class="price" id="priceLabel">150 zł</div>
+                    </div>
+                    <button type="submit" class="button button-primary">Zamawiam voucher</button>
+                  </div>
+
+                  <div class="form-group form-check mt-3">
+                    <input type="checkbox" class="form-check-input" id="consent" required>
+                    <label class="form-check-label" for="consent">Wyrażam zgodę na kontakt w celu realizacji zamówienia i akceptuję warunki zakupu vouchera.</label>
+                  </div>
+                </form>
+
+                <!-- Sekcja instrukcji płatności po złożeniu zamówienia -->
+                <div id="paymentBox" class="bank-box" hidden>
+                  <h5 class="mb-2">Dane do przelewu</h5>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div>Odbiorca:</div>
+                      <strong id="payReceiver">Justyna Czerwonka – Makeup</strong>
+                    </div>
+                    <div class="col-sm-6">
+                      <div>Kwota:</div>
+                      <strong id="payAmount">150 zł</strong>
+                    </div>
+                  </div>
+                  <div class="mt-2">Numer konta (IBAN):<br>
+                    <code id="payIban">PL12 3456 7890 1234 5678 9012 3456</code>
+                  </div>
+                  <div class="mt-2">Tytuł przelewu:<br>
+                    <code id="payTitle">Voucher – <span class="order-id">#VCH-000000</span></code>
+                  </div>
+                  <button class="button button-secondary copy-btn" id="copyPayment">Skopiuj dane przelewu</button>
+
+                  <div class="order-summary">
+                    <div class="mb-1"><strong>Podsumowanie zamówienia</strong></div>
+                    <div>Numer zamówienia: <span class="order-id" id="orderId">#VCH-000000</span></div>
+                    <div>Na nazwisko: <span id="summaryRecipient">—</span></div>
+                    <div>Rodzaj vouchera: <span id="summaryType">—</span></div>
+                    <div>Dane kontaktowe: <span id="summaryContact">—</span></div>
+                    <div class="mt-2"><a id="mailtoLink" class="button button-primary" href="#">Potwierdź zamówienie e‑mailem</a></div>
+                    <div class="form-note mt-2">Po zaksięgowaniu płatności otrzymasz voucher w PDF na podany adres e‑mail.</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="voucher-terms">
+          <li>Voucher obejmuje jeden makijaż wybranego typu i jest ważny 12 miesięcy od daty zakupu.</li>
+          <li>Ślubny: 400 zł. Pozostałe (Beauty, Soft Glam, Glow Glam): 150 zł.</li>
+          <li>Termin realizacji ustalany indywidualnie poprzez <a href="https://m.me/644065852120283" target="_blank" rel="noopener noreferrer">Messenger</a> lub <a href="https://www.instagram.com/justynaczerwonkamakeup" target="_blank" rel="noopener noreferrer">Instagram</a>.</li>
+          <li>Zakup vouchera oznacza akceptację <a href="/regulamin.html">warunków świadczenia usług</a>.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section bg-default section-xs-type-1 footer-minimal">
+    <div class="container">
+      <div class="row row-30 align-items-lg-center justify-content-lg-between">
+        <div class="col-lg-2">
+          <div class="footer-brand">
+            <a href="index.html"><img src="images/IMG_2709.jpeg" alt="Logo" width="257" height="84" loading="lazy" decoding="async"></a>
+          </div>
+        </div>
+        <div class="col-lg-10">
+          <div class="footer-nav">
+            <ul class="rd-navbar-nav">
+              <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Start</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a></li>
+              <li class="rd-nav-item active"><a class="rd-nav-link" href="voucher.html">Voucher</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Skrypty -->
+  <script defer src="js/core.min.js"></script>
+  <script defer src="js/script.js"></script>
+  <script>
+    // KONFIGURACJA – uzupełnij realnymi danymi
+    const BANK_RECEIVER = 'Justyna Czerwonka – Makeup';
+    const BANK_IBAN = 'PL12 3456 7890 1234 5678 9012 3456'; // ← podmień
+    const RECEIVER_EMAIL = 'justynaczerwonkamakeup@gmail.com';
+
+    // Prosty generator ID zamówienia
+    function makeOrderId() {
+      const dt = new Date();
+      const ymd = dt.toISOString().slice(2,10).replaceAll('-','');
+      const rnd = Math.floor(Math.random()*900)+100; // 3 cyfry
+      return `#VCH-${ymd}-${rnd}`;
+    }
+
+    function formatPrice(n) { return new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(n); }
+
+    // Mapowanie typu → nazwa + cena
+    const PRODUCT_MAP = {
+      beauty:  { label: 'Beauty',    price: 150 },
+      softglam:{ label: 'Soft Glam', price: 150 },
+      glowglam:{ label: 'Glow Glam', price: 150 },
+      slubny:  { label: 'Ślubny',    price: 400 }
+    };
+
+    const form = document.getElementById('voucherForm');
+    const typeSel = document.getElementById('voucherType');
+    const priceLabel = document.getElementById('priceLabel');
+    const payBox = document.getElementById('paymentBox');
+    const payReceiver = document.getElementById('payReceiver');
+    const payIban = document.getElementById('payIban');
+    const payAmount = document.getElementById('payAmount');
+    const payTitle = document.getElementById('payTitle');
+    const orderIdEl = document.getElementById('orderId');
+    const summaryRecipient = document.getElementById('summaryRecipient');
+    const summaryType = document.getElementById('summaryType');
+    const summaryContact = document.getElementById('summaryContact');
+    const mailtoLink = document.getElementById('mailtoLink');
+
+    // Aktualizacja ceny przy zmianie typu
+    function updatePrice() {
+      const val = typeSel.value;
+      const price = PRODUCT_MAP[val].price;
+      priceLabel.textContent = formatPrice(price);
+    }
+    typeSel.addEventListener('change', updatePrice);
+    updatePrice();
+
+    // Walidacja helper
+    function reportInvalid(el){ el.classList.add('is-invalid'); el.addEventListener('input', ()=> el.classList.remove('is-invalid'), { once:true }); }
+
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      const data = new FormData(form);
+      const type = data.get('voucherType');
+      const recName = (data.get('recipientName')||'').trim();
+      const email = (data.get('buyerEmail')||'').trim();
+      const phone = (data.get('buyerPhone')||'').trim();
+      const message = (data.get('message')||'').trim();
+      const consent = document.getElementById('consent').checked;
+
+      // Minimalna walidacja
+      if(!recName){ reportInvalid(document.getElementById('recipientName')); return; }
+      if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { reportInvalid(document.getElementById('buyerEmail')); return; }
+      if(!consent){ alert('Zaznacz zgodę na kontakt.'); return; }
+
+      const product = PRODUCT_MAP[type];
+      const orderId = makeOrderId();
+
+      // Uzupełnij dane płatności
+      payReceiver.textContent = BANK_RECEIVER;
+      payIban.textContent = BANK_IBAN;
+      payAmount.textContent = formatPrice(product.price);
+      payTitle.innerHTML = `Voucher – <span class="order-id">${orderId}</span>`;
+      orderIdEl.textContent = orderId;
+
+      // Podsumowanie wyświetlane pod formularzem
+      summaryRecipient.textContent = recName;
+      summaryType.textContent = `${product.label} (${formatPrice(product.price)})`;
+      summaryContact.textContent = `${email}${phone ? ' • ' + phone : ''}`;
+
+      // Link mailto do wysłania potwierdzenia (gotowiec)
+      const subject = encodeURIComponent(`Zamówienie vouchera ${orderId}`);
+      const body = encodeURIComponent(
+        `Dzień dobry,\n\nProszę o realizację zamówienia vouchera.\n\n`+
+        `• Rodzaj: ${product.label} (${product.price} PLN)\n`+
+        `• Imię i nazwisko obdarowanej/ego: ${recName}\n`+
+        (message ? `• Dedykacja: ${message}\n` : '')+
+        `• Dane kontaktowe do potwierdzenia: ${email}${phone ? ' / ' + phone : ''}\n\n`+
+        `Dane do przelewu:\n`+
+        `${BANK_RECEIVER}\n`+
+        `${BANK_IBAN}\n`+
+        `Tytuł: Voucher – ${orderId}\n\n`+
+        `Po zaksięgowaniu przelewu proszę o wysyłkę vouchera PDF.\n\nPozdrawiam`
+      );
+      mailtoLink.href = `mailto:${encodeURIComponent(RECEIVER_EMAIL)}?subject=${subject}&body=${body}`;
+
+      // Pokaż box płatności
+      payBox.hidden = false;
+      payBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Kopiuj dane przelewu do schowka
+    document.getElementById('copyPayment').addEventListener('click', async (e)=>{
+      e.preventDefault();
+      const text = `Odbiorca: ${BANK_RECEIVER}\nIBAN: ${BANK_IBAN}\nKwota: ${payAmount.textContent}\nTytuł: ${payTitle.textContent.replace(/\s+/g,' ').trim()}`;
+      try {
+        await navigator.clipboard.writeText(text);
+        e.target.textContent = 'Skopiowano ✅';
+        setTimeout(()=> e.target.textContent = 'Skopiuj dane przelewu', 2000);
+      } catch(err){
+        alert('Skopiuj ręcznie: ' + text);
+      }
+    });
+  </script>
+
+  <!-- Schema.org – oferta vouchera -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Voucher na makijaż",
+    "brand": {"@type": "Brand", "name": "Justyna Czerwonka – Makeup"},
+    "description": "Voucher na makijaż: Beauty, Soft Glam, Glow Glam (150 zł) lub Ślubny (400 zł)",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "PLN",
+      "lowPrice": "150",
+      "highPrice": "400",
+      "offerCount": "4",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</body>
+</html>
