@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezerwacje – Justyna Czerwonka Makeup</title>
+  <meta name="description" content="Zarezerwuj termin makijażu – wybierz termin w kalendarzu Google.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS wspólne -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/fonts-local.css">
+  <link rel="preload" href="css/bootstrap.css" as="style">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+  </noscript>
+
+  <style>
+    .rez-hero { text-align:center; padding: 3rem 1rem 1rem; }
+    .rez-hero h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom:.75rem; }
+    .rez-hero p { color:#555; max-width: 760px; margin: 0 auto 1.5rem; }
+
+    /* Kalendarz */
+    .cal-wrap { max-width: 980px; margin: 0 auto 3rem; }
+    .cal-wrap iframe { width: 100%; height: 800px; border: none; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+    @media (max-width: 576px){ .cal-wrap iframe { height: 1050px; } }
+
+    .fallback { text-align:center; margin-top: .75rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="section page-header">
+    <div class="rd-navbar-wrap">
+      <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-stick-up="true">
+        <div class="rd-navbar-main-outer">
+          <div class="rd-navbar-main">
+            <div class="rd-navbar-panel">
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" aria-label="Otwórz menu"><span></span></button>
+              <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/IMG_2709.jpeg" alt="Justyna Czerwonka Makeup" width="160" height="52" decoding="async"></a></div>
+            </div>
+            <div class="rd-navbar-main-element">
+              <div class="rd-navbar-nav-wrap">
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Start</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a></li>
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="rezerwacje.html" aria-current="page">Rezerwacje</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section bg-default rez-hero text-center">
+      <div class="container">
+        <h1>Rezerwacja terminu</h1>
+        <p>Wybierz dogodny termin w kalendarzu i potwierdź rezerwację w kilku krokach.</p>
+      </div>
+    </section>
+
+    <section class="section bg-default">
+      <div class="container">
+        <!-- KALENDARZ -->
+        <div class="cal-wrap" id="calWrap">
+          <iframe
+            id="calIframe"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1EvZ_-Rn3h7HZnpopiO13W7yYoSN2YLWpmZJTwILnXDRYhhoFKsG3ENddTX0ESvnCP9OeSe0F7?gv=true"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Kalendarz rezerwacji">
+          </iframe>
+          <div class="fallback">
+            <a class="button button-secondary"
+              id="fallbackBtn"
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1EvZ_-Rn3h7HZnpopiO13W7yYoSN2YLWpmZJTwILnXDRYhhoFKsG3ENddTX0ESvnCP9OeSe0F7?gv=true"
+              target="_blank" rel="noopener">
+              Otwórz w nowym oknie
+            </a>
+          </div>
+        </div>
+
+        <ul class="rez-terms">
+          <li>Rezerwacje realizowane są przez <strong>Google Calendar Appointment Schedule</strong>.</li>
+          <li>Po wyborze terminu otrzymasz potwierdzenie e-mail.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="section bg-default section-xs-type-1 footer-minimal">
+    <div class="container">
+      <div class="row row-30 align-items-lg-center justify-content-lg-between">
+        <div class="col-lg-2">
+          <div class="footer-brand"><a href="index.html"><img src="images/IMG_2709.jpeg" alt="Logo" width="257" height="84" loading="lazy" decoding="async"></a></div>
+        </div>
+        <div class="col-lg-10">
+          <div class="footer-nav">
+            <ul class="rd-navbar-nav">
+              <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Start</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="o-mnie.html">O mnie</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="oferta.html">Oferta</a></li>
+              <li class="rd-nav-item active"><a class="rd-nav-link" href="rezerwacje.html">Rezerwacje</a></li>
+              <li class="rd-nav-item"><a class="rd-nav-link" href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimalny JS (bramka usunięta) -->
+  <script defer src="js/core.min.js"></script>
+  <script defer src="js/script.js"></script>
+</body>
+</html>
